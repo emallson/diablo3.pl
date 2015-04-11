@@ -110,7 +110,7 @@ generator(generator{name:deadly_reach,
           target_type:[aoe, aoe, aoe],
           as:[1.59, 1.59, 1],
           dmg:[1.5, 1.5, 2.15],
-          type:physical,
+          type:lightning,
           spirit:12}).
 
 generator(generator{name:cripping_wave,
