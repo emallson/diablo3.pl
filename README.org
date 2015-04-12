@@ -1,0 +1,43 @@
+* diablo3.pl
+
+  This is a very simple Prolog toy to play with simulating stats for Blizzard's
+  Diablo 3.
+
+** Requirements
+
+   - SWI Prolog 7.1+
+
+     This is a hard requirement because I am using their dictionary syntax. I
+     realize that this is a development version, but I <3 Dictionaries. (If any
+     more experience Prologgers want to give me some advice on alternatives,
+     please do).
+
+** Examples
+
+   #+begin_src prolog
+     ?- consult(generators), consult(simulations).
+     true.
+
+     ?- generator(G), generator{name: Name, rune: Rune, type: lightning} :< G, damage(G, Damage).
+     G = generator{as:[1.64, 1.64, 1], dmg:[2, 2, 4], name:fot, proc_coefs:[0.86, 0.86, 0.62], rune:none, spirit:12, target_type:[st, st, aoe], type:lightning},
+     Name = fot,
+     Rune = none,
+     Damage = 10.559999999999999 ;
+     G = generator{as:[1.64, 1.64, 1], dmg:[2, 2, 4], name:fot, proc_coefs:[0.21, 0.21, 0.62], rune:thunderclap, spirit:12, target_type:[aoe, aoe, aoe], type:lightning},
+     Name = fot,
+     Rune = thunderclap,
+     Damage = 10.559999999999999 ;
+     G = generator{as:[1.64, 1.64, 1], dmg:[2, 2, 4], name:fot, proc_coefs:[0.42, 0.42, 0.31], rune:static_charge, spirit:12, target_type:[st, st, aoe], type:lightning},
+     Name = fot,
+     Rune = static_charge,
+     Damage = 10.559999999999999 ;
+     G = generator{as:[1.59, 1.59, 1], dmg:[1.5, 1.5, 2.15], name:deadly_reach, proc_coefs:[0.85, 0.85, 0.35], rune:scattered_blows, spirit:12, target_type:[aoe, aoe, aoe], type:lightning},
+     Name = deadly_reach,
+     Rune = scattered_blows,
+     Damage = 6.92 ;
+     G = generator{as:[1.53, 1.53, 1], dmg:[1.9, 4.23, 1.9], name:wothf, proc_coefs:[0.75, 0.9, 0.5], rune:hands_of_lightning, spirit:12, target_type:[aoe, aoe, aoe], type:lightning},
+     Name = wothf,
+     Rune = hands_of_lightning,
+     Damage = 11.278900000000002 ;
+     false.
+   #+end_src
